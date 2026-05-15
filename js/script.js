@@ -14,7 +14,13 @@ const urlAPI =
   "https://script.google.com/macros/s/AKfycbycZoSRw7d_-OOyH4vuMRm-ezdoqZFJpEfn8TONFprpCtcZjuQGGLNsyAIbwUZlUC9REA/exec";
 
 function setHidden(el, isHidden) {
-  el.classList.toggle("hidden", isHidden);
+  if (isHidden) {
+    el.classList.add("hidden");
+    el.style.display = "none";
+  } else {
+    el.classList.remove("hidden");
+    el.style.display = el === loadingArea ? "flex" : "block";
+  }
 }
 
 function resetTampilan() {

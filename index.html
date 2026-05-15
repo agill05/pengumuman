@@ -10,25 +10,28 @@
     <body>
 
         <div class="container">
-            <h2>Cek Kelulusan</h2>
-            <p>Masukkan NISN atau Nomor Peserta Anda</p>
-
-            <div class="input-group">
-                <input type="text" id="inputId" placeholder="Contoh: 12345678" autocomplete="off">
-                <button id="btnCek">Cek Hasil</button>
+            <div class="header">
+                <h2>Cek Kelulusan</h2>
+                <p class="subtitle">Masukkan NISN atau Nomor Peserta untuk melihat hasil</p>
             </div>
 
-            <div id="loadingArea" class="hidden" aria-live="polite">
+            <div class="input-group">
+                <input type="text" id="inputId" placeholder="Contoh: 12345678" autocomplete="off" inputmode="numeric">
+                <button id="btnCek" type="button">Cek Hasil</button>
+            </div>
+
+            <div id="loadingArea" class="hidden loading-area" aria-live="polite">
+                <div class="spinner" aria-hidden="true"></div>
                 <p>Memeriksa data...</p>
             </div>
 
             <div id="hasilArea" class="hidden">
                 <h3 id="namaSiswa"></h3>
-                <div id="statusKelulusan" class="status-box"></div>
-                <p id="pesanSiswa"></p>
+                <div id="statusKelulusan" class="status-box" role="status" aria-live="polite"></div>
+                <p id="pesanSiswa" class="pesan"></p>
             </div>
 
-            <div id="errorArea" class="hidden error-text">
+            <div id="errorArea" class="hidden error-text" role="alert">
                 <p id="errorText">Data tidak ditemukan. Pastikan nomor yang dimasukkan benar.</p>
             </div>
         </div>

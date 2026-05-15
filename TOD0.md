@@ -1,0 +1,7 @@
+- [x] Read `index.html`
+- [x] Read `css/style.css`
+- [x] Read `js/script.js`
+- [x] Update `index.html` UI (spinner + typography improvements)
+- [x] Update `css/style.css` (modern card/badge/button/loading animations)
+- [x] Keep `js/script.js` unchanged
+- [ ] Test in browser (cek loading, success, error)
