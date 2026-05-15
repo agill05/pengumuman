@@ -1,4 +1,5 @@
 const urlGoogleSheets = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRLWj1lE97_FvrlE2PSkFgqSkxJjHijpKCi4w-FBO-xMjkeXKf9n0--W5oqVu_6FPfNBgbwY0oTdVLC/pub?output=csv';
+const urlUpdateRealtime = urlGoogleSheets + "?t=" + new Date().getTime();
 
 const inputId = document.getElementById('inputId');
 const btnCek = document.getElementById('btnCek');
@@ -34,7 +35,6 @@ function setStatusKelulusan(status) {
     statusKelulusan.innerText = status ?? '';
 }
 
-// cache agar pencarian saat tombol ditekan cepat
 let dataSiswaCache = [];
 let isDataLoaded = false;
 
@@ -45,7 +45,6 @@ function loadDataFromGoogleSheets() {
             header: true,
             skipEmptyLines: true,
             complete: function (results) {
-                // results.data = array objek berdasarkan header CSV
                 dataSiswaCache = Array.isArray(results.data) ? results.data : [];
                 isDataLoaded = true;
                 resolve(dataSiswaCache);
@@ -68,16 +67,12 @@ async function cekKelulusan() {
         return;
     }
 
-    // pastikan data sudah terload duluan (real-time melalui Published CSV)
     setHidden(loadingArea, false);
 
     try {
         if (!isDataLoaded) {
             await loadDataFromGoogleSheets();
         }
-
-        // Jika ingin benar-benar “real-time” setiap klik, paksa reload:
-        // await loadDataFromGoogleSheets();
 
         const siswa = dataSiswaCache.find(item => String(item.id) === input);
 
@@ -105,7 +100,6 @@ inputId.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') cekKelulusan();
 });
 
-// pastikan tampilan awal konsisten dan mulai load awal
 resetTampilan();
 loadDataFromGoogleSheets();
 
