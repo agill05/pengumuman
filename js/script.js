@@ -1,6 +1,8 @@
 const inputId = document.getElementById("inputId");
 const btnCek = document.getElementById("btnCek");
 
+const btnCekTextDefault = btnCek.innerText;
+
 const loadingArea = document.getElementById("loadingArea");
 const hasilArea = document.getElementById("hasilArea");
 const errorArea = document.getElementById("errorArea");
@@ -41,6 +43,16 @@ function setStatusKelulusan(status) {
   statusKelulusan.innerText = status ?? "";
 }
 
+function setButtonLoading(isLoading) {
+  if (isLoading) {
+    btnCek.disabled = true;
+    btnCek.innerText = "Memeriksa…";
+  } else {
+    btnCek.disabled = false;
+    btnCek.innerText = btnCekTextDefault;
+  }
+}
+
 async function cekKelulusan() {
   resetTampilan();
 
@@ -52,7 +64,14 @@ async function cekKelulusan() {
     return;
   }
 
+  if (!/^\d+$/.test(input)) {
+    errorText.innerText = "Nomor peserta hanya boleh angka.";
+    setHidden(errorArea, false);
+    return;
+  }
+
   setHidden(loadingArea, false);
+  setButtonLoading(true);
 
   try {
     const response = await fetch(urlAPI, { cache: "no-store" });
@@ -84,6 +103,7 @@ async function cekKelulusan() {
     setHidden(errorArea, false);
   } finally {
     setHidden(loadingArea, true);
+    setButtonLoading(false);
   }
 }
 
