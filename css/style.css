@@ -35,6 +35,7 @@ body {
     color: var(--text);
     position: relative;
     overflow-x: hidden;
+    overflow-y: auto;
 }
 
 body::before{
@@ -47,6 +48,7 @@ body::before{
         radial-gradient(480px 260px at 60% 90%, rgba(236,72,153,0.14), transparent 60%);
     filter: blur(18px);
     pointer-events:none;
+    z-index: -1;
 }
 
 .container {
@@ -90,6 +92,7 @@ body::before{
 
 input {
     width: 100%;
+    min-height: 44px;
     padding: 12px 12px;
     border: 1px solid rgba(255,255,255,0.18);
     background: rgba(0,0,0,0.18);
@@ -109,6 +112,7 @@ input:focus{
 
 button {
     width: 100%;
+    min-height: 44px;
     padding: 12px 16px;
     background-color: var(--primary);
     color: white;
@@ -148,6 +152,9 @@ button:disabled {
     border: 1px solid transparent;
     width: fit-content;
     max-width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .status-lulus {
@@ -253,6 +260,48 @@ button:disabled {
     }
 }
 
+/* Tablet kecil / Phablet */
+@media (min-width: 421px) and (max-width: 767px) {
+    body{
+        padding: 22px;
+        align-items: center;
+    }
+
+    body::before{
+        inset:-120px;
+        filter: blur(14px);
+    }
+
+    .container{
+        max-width: 560px;
+        padding: 26px 18px;
+    }
+
+    .header h2{
+        font-size: 23px;
+    }
+
+    .subtitle{
+        font-size: 13.5px;
+    }
+
+    input{
+        font-size: 14.5px;
+        padding: 12px 12px;
+    }
+
+    button{
+        font-size: 14.5px;
+        padding: 12px 16px;
+    }
+
+    .status-box{
+        font-size: 18.5px;
+        margin-top: 16px;
+        padding: 12px 14px;
+    }
+}
+
 /* Tablet ke atas */
 @media (min-width: 768px) {
     body{
@@ -282,6 +331,17 @@ button:disabled {
 
     .status-box{
         font-size: 20px;
+    }
+}
+
+/* Hindari overflow vertikal pada layar pendek (mis. device landscape) */
+@media (max-height: 600px) {
+    body{
+        align-items: flex-start;
+        padding-top: 16px;
+    }
+    .container{
+        margin-top: 6px;
     }
 }
 
