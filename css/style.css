@@ -1,0 +1,96 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: rgba(255,255,255,0.05); 
+    backdrop-filter: blur(20px);
+    border: 0.5px solid rgba(255,255,255,0.15);
+    border-radius: 20px; 
+    color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+input {
+    padding: 10px;
+    width: calc(100% - 22px);
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.hidden {
+    display: none;
+}
+
+.input-group button {
+    width: 100%;
+}
+
+.status-box {
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.status-lulus {
+    background: rgba(52,211,153,0.15); 
+    color: #6ee7b7; 
+    border: 1px solid rgba(52,211,153,0.25);
+}
+
+.status-tunda {
+    background: rgba(248,113,113,0.15); 
+    color: #fca5a5; 
+    border: 1px solid rgba(248,113,113,0.25); 
+}
+
+#loadingArea {
+    margin-top: 10px;
+    color: #333;
+}
+
+#loadingArea p {
+    margin: 0;
+}
+
+.error-text {
+    color: #dc3545;
+    margin-top: 15px;
+}
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pengumuman Kelulusan</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    </head>
+    <body>
+
+        <div class="container">
+            <h2>Cek Kelulusan</h2>
+            <p>Masukkan NISN atau Nomor Peserta Anda</p>
+
+            <div class="input-group">
+                <input type="text" id="inputId" placeholder="Contoh: 12345678" autocomplete="off">
+                <button id="btnCek">Cek Hasil</button>
+            </div>
+
+            <div id="loadingArea" class="hidden" aria-live="polite">
+                <p>Memeriksa data...</p>
+            </div>
+
+            <div id="hasilArea" class="hidden">
+                <h3 id="namaSiswa"></h3>
+                <div id="statusKelulusan" class="status-box"></div>
+                <p id="pesanSiswa"></p>
+            </div>
+
+            <div id="errorArea" class="hidden error-text">
+                <p id="errorText">Data tidak ditemukan. Pastikan nomor yang dimasukkan benar.</p>
+            </div>
+        </div>
+
+        <script src="/js/script.js"></script>
+    </body>
+</html>
