@@ -184,7 +184,6 @@ button:disabled {
 
 #loadingArea p { margin: 0; font-weight: 600; color: var(--muted); }
 
-/* spinner */
 .spinner{
     width: 18px;
     height: 18px;
@@ -201,11 +200,98 @@ button:disabled {
 
 .hidden.loading-area{ display:none; }
 
-/* error */
 .error-text {
     color: #fecaca;
     margin-top: 15px;
     font-size: 13px;
     line-height: 1.4;
+}
+
+@media (max-width: 420px) {
+    body{
+        padding: 14px;
+        align-items: flex-start;
+        min-height: 100svh;
+    }
+
+    .container{
+        padding: 22px 16px;
+        max-width: 100%;
+    }
+
+    .header h2{
+        font-size: 20px;
+    }
+
+    .subtitle{
+        font-size: 12.5px;
+        margin-bottom: 14px;
+    }
+
+    input{
+        padding: 11px 12px;
+        font-size: 13.5px;
+    }
+
+    button{
+        padding: 11px 14px;
+        font-size: 13.5px;
+    }
+
+    .status-box{
+        font-size: 16px;
+        padding: 10px 12px;
+        margin-top: 12px;
+    }
+
+    .pesan{
+        font-size: 13.5px;
+    }
+
+    #loadingArea{
+        padding: 10px 10px;
+    }
+}
+
+/* Tablet ke atas */
+@media (min-width: 768px) {
+    body{
+        padding: 32px;
+    }
+
+    .container{
+        max-width: 520px;
+        padding: 30px 26px;
+    }
+
+    .header h2{
+        font-size: 24px;
+    }
+
+    .subtitle{
+        font-size: 14px;
+    }
+
+    input{
+        font-size: 15px;
+    }
+
+    button{
+        font-size: 15px;
+    }
+
+    .status-box{
+        font-size: 20px;
+    }
+}
+
+/* Accessibility: kurangi animasi */
+@media (prefers-reduced-motion: reduce) {
+    .container{
+        animation: none !important;
+    }
+    .spinner{
+        animation: none !important;
+    }
 }
 
