@@ -357,7 +357,6 @@ button:disabled {
     margin: 0;
 }
 
-/* ── Safe area insets (notched phones) ───────── */
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
     body {
         padding-bottom: calc(24px + env(safe-area-inset-bottom));
