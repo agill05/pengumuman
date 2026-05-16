@@ -16,6 +16,8 @@ const urlAPI =
   "https://script.google.com/macros/s/AKfycbycZoSRw7d_-OOyH4vuMRm-ezdoqZFJpEfn8TONFprpCtcZjuQGGLNsyAIbwUZlUC9REA/exec";
 
 function setHidden(el, isHidden) {
+  if (!el) return;
+
   if (isHidden) {
     el.classList.add("hidden");
     el.style.display = "none";
@@ -50,6 +52,20 @@ function setButtonLoading(isLoading) {
   } else {
     btnCek.disabled = false;
     btnCek.innerText = btnCekTextDefault;
+  }
+}
+
+function setFotoSiswa(siswa) {
+  const elemenFoto = document.getElementById("fotoSiswa");
+  if (!elemenFoto) return;
+
+  const foto = (siswa?.foto ?? "").toString().trim();
+  if (foto) {
+    elemenFoto.src = foto;
+    elemenFoto.classList.remove("hidden");
+  } else {
+    elemenFoto.classList.add("hidden");
+    elemenFoto.removeAttribute("src");
   }
 }
 
@@ -95,6 +111,9 @@ async function cekKelulusan() {
     namaSiswa.innerText = siswa.nama ?? "";
     pesanSiswa.innerText = siswa.pesan ?? "";
     setStatusKelulusan(siswa.status);
+
+    setFotoSiswa(siswa);
+
     setHidden(hasilArea, false);
   } catch (err) {
     console.error("Terjadi kesalahan:", err);
