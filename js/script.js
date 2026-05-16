@@ -59,13 +59,13 @@ async function cekKelulusan() {
   const input = inputId.value.trim();
 
   if (input === "") {
-    errorText.innerText = "Harap masukkan nomor peserta!";
+    errorText.innerText = "Harap masukkan NISN atau nomor peserta!";
     setHidden(errorArea, false);
     return;
   }
 
   if (!/^\d+$/.test(input)) {
-    errorText.innerText = "Nomor peserta hanya boleh angka.";
+    errorText.innerText = "NISN atau nomor peserta hanya boleh angka.";
     setHidden(errorArea, false);
     return;
   }
