@@ -1,7 +1,6 @@
-/* === Variabel Warna & Font === */
 :root {
-  --primary-color: #0f4c81; /* Biru Tua Sekolah */
-  --secondary-color: #f2a900; /* Emas Kelulusan */
+  --primary-color: #0f4c81;
+  --secondary-color: #f2a900;
   --bg-color: #f8f9fa;
   --text-color: #333333;
   --white: #ffffff;
@@ -9,7 +8,6 @@
   --radius: 10px;
 }
 
-/* Base */
 * {
   margin: 0;
   padding: 0;
@@ -28,7 +26,6 @@ body {
   line-height: 1.6;
 }
 
-/* === Header === */
 header {
   background-color: var(--white);
   padding: 20px 5%;
@@ -70,7 +67,6 @@ header {
   color: #666;
 }
 
-/* === Hero Section === */
 .hero {
   background: linear-gradient(135deg, var(--primary-color) 0%, #1a75ff 100%);
   color: var(--white);
@@ -90,7 +86,6 @@ header {
   margin: 0 auto 12px auto;
 }
 
-/* === Pengecekan Kelulusan === */
 .check-section {
   background-color: var(--white);
   max-width: 600px;
@@ -159,7 +154,6 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* === Hasil / Loading Section === */
 .hidden {
   display: none;
 }
@@ -216,7 +210,6 @@ button:disabled {
   }
 }
 
-/* Foto siswa (dipakai JS) */
 .foto-profil {
   width: 120px;
   height: 150px;
@@ -227,7 +220,6 @@ button:disabled {
   display: block;
 }
 
-/* === Status Kelulusan === */
 .status-box {
   margin: 14px auto 10px auto;
   padding: 12px 14px;
@@ -261,13 +253,11 @@ button:disabled {
   line-height: 1.45;
 }
 
-/* Pesan siswa dari JS */
 #pesanSiswa {
   font-weight: 800;
   color: #2f2f2f;
 }
 
-/* === Error === */
 .error-text {
   max-width: 600px;
   margin: 15px auto 0 auto;
@@ -280,7 +270,6 @@ button:disabled {
   line-height: 1.4;
 }
 
-/* === Pesan Kepala Sekolah === */
 .message-section {
   max-width: 800px;
   margin: 0 auto 60px auto;
@@ -298,7 +287,6 @@ button:disabled {
   color: #555;
 }
 
-/* === Footer === */
 footer {
   background-color: var(--primary-color);
   color: var(--white);
