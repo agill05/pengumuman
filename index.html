@@ -1,42 +1,98 @@
 <!DOCTYPE html>
 <html lang="id">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pengumuman Kelulusan</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pengumuman Kelulusan - SMP Negeri 1 Nusantara</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+            rel="stylesheet">
         <link rel="stylesheet" href="/css/style.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
     </head>
     <body>
-
-        <div class="container">
-            <div class="header">
-                <h2>Cek Kelulusan</h2>
-                <p class="subtitle">Masukkan NISN atau Nomor Peserta untuk melihat hasil</p>
+        <!-- Header -->
+        <header>
+            <div class="logo-container">
+                <div class="logo-placeholder">SMP</div>
+                <div class="school-name">
+                    <h1>SMP Negeri 3 Limboto Barat</h1>
+                    <p>Mencetak Generasi Cerdas & Berakhlak Mulia</p>
+                </div>
             </div>
+        </header>
+
+        <!-- Hero Bagian Atas -->
+        <section class="hero">
+            <h2>Pengumuman Kelulusan</h2>
+            <p>Tahun Ajaran 2025/2026</p>
+            <p>
+                Selamat datang di portal resmi pengumuman kelulusan siswa kelas
+                IX SMP Negeri 3 Limboto Barat.
+                Silakan masukkan NISN Anda pada kolom di bawah ini untuk melihat
+                hasil kelulusan.
+            </p>
+        </section>
+
+        <!-- Formulir Pengecekan -->
+        <section class="check-section">
+            <h3>Cek Status Anda</h3>
 
             <div class="input-group">
-                <input type="text" id="inputId" placeholder="532423020" autocomplete="off" inputmode="numeric">
-                <button id="btnCek" type="button">Cek Hasil</button>
+                <input
+                    type="text"
+                    id="inputId"
+                    placeholder="Masukkan 10 digit NISN Anda..."
+                    maxlength="10"
+                    autocomplete="off"
+                    inputmode="numeric">
+                <button id="btnCek" type="button">Cek Hasil Kelulusan</button>
             </div>
 
-            <div id="loadingArea" class="hidden loading-area" aria-live="polite">
+            <!-- Kotak Hasil (Akan muncul setelah tombol diklik) -->
+            <div id="loadingArea" class="hidden loading-area"
+                aria-live="polite">
                 <div class="spinner" aria-hidden="true"></div>
                 <p>Data sedang diproses...</p>
             </div>
-            
+
             <div id="hasilArea" class="hidden">
-                <img id="fotoSiswa" src="" alt="Foto Siswa" class="foto-profil hidden">
+                <img id="fotoSiswa" src alt="Foto Siswa"
+                    class="foto-profil hidden">
 
                 <h3 id="namaSiswa"></h3>
-                <div id="statusKelulusan" class="status-box" role="status" aria-live="polite"></div>
+                <div id="statusKelulusan" class="status-box" role="status"
+                    aria-live="polite"></div>
                 <p id="pesanSiswa" class="pesan"></p>
             </div>
 
             <div id="errorArea" class="hidden error-text" role="alert">
-                <p id="errorText">Data tidak ditemukan. Pastikan nomor yang dimasukkan benar.</p>
+                <p id="errorText">Data tidak ditemukan. Pastikan nomor yang
+                    dimasukkan benar.</p>
             </div>
-        </div>
+        </section>
+
+        <!-- Pesan Kepala Sekolah -->
+        <section class="message-section">
+            <h3>Pesan Kepala Sekolah</h3>
+            <p>
+                "Selamat kepada seluruh ananda yang telah menyelesaikan
+                pendidikan di tingkat Sekolah Menengah Pertama.
+                Jadikan kelulusan ini sebagai gerbang awal untuk meraih
+                cita-cita yang lebih tinggi di bangku SMA/SMK.
+                Tetaplah rendah hati, hormati orang tua, dan teruslah belajar
+                tiada henti."
+            </p>
+            <br>
+            <p><strong>- Nur Eka Ramayanti, M.Pd</strong></p>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Informatika Mengajar Batch IX | SMP Negeri 3 Limboto
+                Barat. Hak Cipta Dilindungi.</p>
+        </footer>
 
         <script src="/js/script.js"></script>
     </body>

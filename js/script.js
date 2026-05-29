@@ -74,14 +74,14 @@ async function cekKelulusan() {
 
   const input = inputId.value.trim();
 
-  if (input === "") {
-    errorText.innerText = "Harap masukkan NISN atau nomor peserta!";
+  if (input === "" || input.length !== 10) {
+    errorText.innerText = "⚠️ Harap masukkan 10 digit angka NISN yang valid!";
     setHidden(errorArea, false);
     return;
   }
 
   if (!/^\d+$/.test(input)) {
-    errorText.innerText = "NISN atau nomor peserta hanya boleh angka.";
+    errorText.innerText = "⚠️ Harap masukkan 10 digit angka NISN yang valid!";
     setHidden(errorArea, false);
     return;
   }
@@ -103,7 +103,7 @@ async function cekKelulusan() {
 
     if (!siswa) {
       errorText.innerText =
-        "Data tidak ditemukan. Pastikan nomor yang dimasukkan benar.";
+        "Data tidak ditemukan. Pastikan NISN yang dimasukkan benar.";
       setHidden(errorArea, false);
       return;
     }
