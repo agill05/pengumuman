@@ -219,7 +219,7 @@ button:disabled {
 /* Foto siswa (dipakai JS) */
 .foto-profil {
   width: 120px;
-  height: 140px;
+  height: 150px;
   object-fit: cover;
   /* border-radius: 50%; */
   border: 3px solid #e0e0e0;
