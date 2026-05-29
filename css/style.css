@@ -261,6 +261,12 @@ button:disabled {
   line-height: 1.45;
 }
 
+/* Pesan siswa dari JS */
+#pesanSiswa {
+  font-weight: 800;
+  color: #2f2f2f;
+}
+
 /* === Error === */
 .error-text {
   max-width: 600px;
